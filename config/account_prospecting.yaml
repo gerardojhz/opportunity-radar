@@ -1,0 +1,77 @@
+# Use case 2: the same engine pointed at B2B prospecting.
+# Example: prioritizing mid-market companies in Mexico for a fuel / fleet
+# and corporate-spend card. Same mechanics: sources -> scoring -> shortlist.
+# All accounts in data/sample_accounts.json are fictional.
+
+title: Account radar · fleet & corporate-spend cards, Mexico mid-market
+threshold: 55
+
+dimensions:
+  - name: Fleet size
+    type: number
+    field: vehicles
+    max: 25
+    floor: 50
+    if_missing: 5
+    near_floor_pct: 0.6        # 20+ vehicles still worth a look
+    near_floor_points: 12
+
+  - name: Industry fit
+    max: 20
+    fields: [industry, description]
+    rules:
+      - label: logistics / distribution / field service
+        any: [logistics, logistica, distribution, distribucion, last mile, field service, transport]
+        points: 20
+      - label: construction / agro / pharma reps
+        any: [construction, construccion, agro, pharma, medical reps]
+        points: 15
+      - label: retail with branches
+        any: [retail, branches, sucursales]
+        points: 10
+
+  - name: Spend pain
+    max: 25
+    fields: [description, signals]
+    rules:
+      - label: manual expense control / reimbursements
+        any: [reembolsos, reimbursements, manual expense, petty cash, caja chica, excel expense]
+        points: 25
+      - label: fuel control issues
+        any: [fuel theft, robo de combustible, fuel control, vales de gasolina en papel]
+        points: 22
+      - label: many branches / field teams
+        any: [branches, sucursales, field teams, equipos en campo]
+        points: 15
+
+  - name: Access to decision-maker
+    max: 15
+    fields: [relationship]
+    rules:
+      - label: warm intro to CFO / finance director
+        any: [warm intro cfo, intro director de finanzas, cfo contact]
+        points: 15
+      - label: known contact in finance or ops
+        any: [finance contact, ops contact, contacto en operaciones]
+        points: 8
+
+  - name: Growth signals
+    max: 15
+    fields: [signals]
+    rules:
+      - label: new funding or new branches
+        any: [funding, ronda, new branches, nuevas sucursales, expansion]
+        points: 15
+      - label: hiring field roles
+        any: [hiring drivers, hiring field, contratando choferes, vacantes de campo]
+        points: 10
+
+penalties:
+  - label: competitor contract renewed in the last 6 months
+    fields: [signals]
+    any: [renewed with competitor, renovo con competidor]
+    points: -30
+  - label: public-sector procurement (long cycle)
+    fields: [industry]
+    any: [government, gobierno, public sector]
+    points: -20

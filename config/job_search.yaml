@@ -1,0 +1,85 @@
+# Use case 1: my own career pipeline.
+# A senior commercial role in payments / fintech in Mexico.
+# Weights add up to 100. Penalties are subtracted after the sum.
+# Values here are examples, not my real salary expectation.
+
+title: Career radar · senior commercial roles in payments & fintech
+threshold: 50
+
+dimensions:
+  - name: Function
+    max: 35
+    fields: [title, description]
+    rules:
+      - label: partnerships / BD / commercial leadership
+        any: [head of partnerships, director de alianzas, business development, desarrollo de negocio, director comercial, commercial director, chief revenue]
+        points: 35
+      - label: country manager / GM
+        any: [country manager, general manager, gerente general]
+        points: 35
+      - label: B2B / product marketing leadership
+        any: [head of marketing, director de marketing, growth, product marketing]
+        points: 25
+      - label: distribution channels
+        any: [canal, channel, brokers, distribution]
+        points: 20
+
+  - name: Industry
+    max: 25
+    fields: [company, industry, description]
+    rules:
+      - label: payments / benefits / fintech
+        any: [payments, pagos, fintech, adquirencia, acquiring, benefits, vales, corporate cards, tarjetas corporativas, fleet]
+        points: 25
+      - label: banking / insurance / pensions
+        any: [bank, banco, insurance, seguros, afore, pension]
+        points: 18
+      - label: B2B tech / SaaS
+        any: [saas, b2b software, platform]
+        points: 10
+
+  - name: Level
+    max: 20
+    fields: [title]
+    rules:
+      - label: director / head / VP / country manager
+        any: [director, head, vp, vice president, country manager, general manager]
+        points: 20
+      - label: senior manager / subdirector
+        any: [senior manager, sr manager, subdirector]
+        points: 10
+      - label: manager
+        any: [manager, gerente]
+        points: 5
+
+  - name: Location
+    max: 10
+    fields: [location, mode]
+    rules:
+      - label: Mexico City or remote from Mexico
+        any: [ciudad de mexico, mexico city, cdmx, remote - mexico, remoto mexico]
+        points: 10
+
+  - name: Compensation
+    type: number
+    field: salary_monthly_mxn
+    max: 10
+    floor: 120000          # example floor
+    if_missing: 5          # most postings hide salary: neutral score
+    near_floor_pct: 0.2
+    near_floor_points: 3
+
+penalties:
+  - label: core is B2C performance marketing / paid media
+    any: [roas, paid media, performance marketing, e-commerce b2c]
+    points: -25
+  - label: requires fashion / luxury / FMCG / hospitality track record
+    any: [fashion retail, luxury, fmcg, consumo masivo, hospitality, hoteleria]
+    points: -25
+  - label: corporate treasury / cash management is mandatory
+    any: [cash management, treasury, tesoreria, liquidity]
+    points: -15
+  - label: requires US residency
+    fields: [location, description]
+    any: [must reside in the us, us residents only, based in the united states]
+    points: -30
