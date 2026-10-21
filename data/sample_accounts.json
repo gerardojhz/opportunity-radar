@@ -1,0 +1,45 @@
+[
+  {
+    "name": "Distribuidora del Bajío (fictional)",
+    "industry": "distribucion de abarrotes",
+    "vehicles": 140,
+    "description": "Regional distributor, 9 sucursales, fuel paid with vales de gasolina en papel.",
+    "signals": "nuevas sucursales in Querétaro; hiring drivers",
+    "relationship": "warm intro CFO via former colleague",
+    "next_step": "Intro call with CFO; bring fuel-control case"
+  },
+  {
+    "name": "Servicios Técnicos Norte (fictional)",
+    "industry": "field service, HVAC maintenance",
+    "vehicles": 35,
+    "description": "Technicians on the road; reembolsos handled in Excel every week.",
+    "signals": "hiring field technicians",
+    "relationship": "ops contact from an industry event",
+    "next_step": "Send 3-line email to ops contact asking for the finance lead"
+  },
+  {
+    "name": "Farmacéutica Lumen (fictional)",
+    "industry": "pharma, medical reps",
+    "vehicles": 80,
+    "description": "200 medical reps with petty cash and manual expense reports.",
+    "signals": "renewed with competitor in March",
+    "relationship": "",
+    "next_step": "Park until renewal window; set reminder"
+  },
+  {
+    "name": "Constructora Valle (fictional)",
+    "industry": "construction",
+    "vehicles": null,
+    "description": "Several job sites; no public info on fleet.",
+    "signals": "",
+    "relationship": ""
+  },
+  {
+    "name": "Municipal Transport Agency (fictional)",
+    "industry": "government transport",
+    "vehicles": 300,
+    "description": "Large fleet, fuel control issues reported in press.",
+    "signals": "",
+    "relationship": ""
+  }
+]

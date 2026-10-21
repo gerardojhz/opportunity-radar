@@ -1,0 +1,59 @@
+[
+  {
+    "title": "Country Manager Mexico",
+    "company": "Pagos Andinos (fictional)",
+    "industry": "fintech, corporate cards and B2B payments",
+    "location": "Ciudad de Mexico",
+    "mode": "Hybrid",
+    "salary_monthly_mxn": null,
+    "description": "Own the commercial number for Mexico, lead sales and customer success, build distribution with partners.",
+    "next_step": "Ask a former colleague for a referral, then apply within 48h"
+  },
+  {
+    "title": "Head of Partnerships LATAM",
+    "company": "BenefitFlow (fictional)",
+    "industry": "employee benefits platform",
+    "location": "Remote - Mexico",
+    "mode": "Remote",
+    "salary_monthly_mxn": 160000,
+    "description": "Build alliances with banks, payroll providers and merchants across LATAM.",
+    "next_step": "Tailor CV to partnerships; highlight merchant alliances"
+  },
+  {
+    "title": "Director de Alianzas",
+    "company": "Seguros Horizonte (fictional)",
+    "industry": "seguros",
+    "location": "Ciudad de Mexico",
+    "mode": "On-site",
+    "salary_monthly_mxn": 105000,
+    "description": "Desarrollo de canal brokers y bancaseguros.",
+    "next_step": "Check whether salary is negotiable before applying"
+  },
+  {
+    "title": "CMO",
+    "company": "ModaNova (fictional)",
+    "industry": "fashion retail",
+    "location": "Ciudad de Mexico",
+    "mode": "On-site",
+    "salary_monthly_mxn": 200000,
+    "description": "Lead performance marketing, paid media and ROAS for a fashion retail brand. Luxury experience required."
+  },
+  {
+    "title": "VP Treasury Solutions",
+    "company": "Global Bank (fictional)",
+    "industry": "bank",
+    "location": "Ciudad de Mexico",
+    "mode": "Hybrid",
+    "salary_monthly_mxn": null,
+    "description": "Sell cash management and liquidity products to large corporates."
+  },
+  {
+    "title": "Business Development Manager",
+    "company": "CloudLedger (fictional)",
+    "industry": "B2B SaaS platform",
+    "location": "Austin, TX",
+    "mode": "On-site",
+    "salary_monthly_mxn": null,
+    "description": "Must reside in the US. Prospect mid-market accounts."
+  }
+]
